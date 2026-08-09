@@ -1,16 +1,19 @@
-const { test, expect } = require('@playwright/test');
+const { test, expect, chromium } = require('@playwright/test');
 
 test('First Test', async ({ page }) => {
-  await page.goto('https://testautomationpractice.blogspot.com/');
-  await page.getByRole('textbox', { name: 'Enter Name' }).click();
-  await page.getByRole('textbox', { name: 'Enter Name' }).fill('Subha');
-  await page.getByRole('textbox', { name: 'Enter EMail' }).click();
-  await page.getByRole('textbox', { name: 'Enter EMail' }).fill('Subha@gmail.com');
-  await page.getByRole('textbox', { name: 'Enter Phone' }).click();
-  await page.getByRole('textbox', { name: 'Enter Phone' }).fill('6543456543');
+  await page.goto('https://playwright.dev/');
+  await page.getByRole('link', { name: 'Playwright logo Playwright' }).click();
+  await page.getByRole('link', { name: 'API' }).click();
+  await page.getByRole('link', { name: 'Docs' }).click();
+  await page.getByRole('link', { name: 'Playwright logo Playwright' }).click();
+ 
 });
 
 test('Second Test', async ({ page }) => {
   await page.goto('https://playwright.dev/');
+  await page.getByRole('link', { name: 'Playwright logo Playwright' }).click();
+  await page.getByRole('link', { name: 'API' }).click();
+  await page.getByRole('link', { name: 'Docs' }).click();
+  await page.getByRole('link', { name: 'Playwright logo Playwright' }).click();
 
 });

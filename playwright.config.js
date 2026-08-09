@@ -18,12 +18,12 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    /*{
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
+   /* {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
@@ -33,14 +33,14 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },*/
     /* Test against branded browsers. */
-    {
-      name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' }, // or 'chrome-beta'
-    },
-    {
-      name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge' }, // or 'msedge-dev'
-    },
+    //{
+    //  name: 'Google Chrome',
+  //    use: { ...devices['Desktop Chrome'], channel: 'chrome' }, // or 'chrome-beta'
+  //  },
+    //{
+     // name: 'Microsoft Edge',
+    //  use: { ...devices['Desktop Edge'], channel: 'msedge' }, // or 'msedge-dev'
+   // },
 
   ],
 });

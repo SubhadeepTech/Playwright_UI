@@ -1,5 +1,15 @@
 // @ts-check
+
 import { defineConfig, devices } from '@playwright/test';
+const path = require('path');
+const dotenv = require('dotenv');
+
+const ENV = process.env.ENV || 'qa';
+
+dotenv.config({
+  path: path.resolve(__dirname, `config/${ENV}.env`)
+});
+
 
 export default defineConfig({
   testDir: './tests',
@@ -22,25 +32,6 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
-   /* {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },*/
-    /* Test against branded browsers. */
-    //{
-    //  name: 'Google Chrome',
-  //    use: { ...devices['Desktop Chrome'], channel: 'chrome' }, // or 'chrome-beta'
-  //  },
-    //{
-     // name: 'Microsoft Edge',
-    //  use: { ...devices['Desktop Edge'], channel: 'msedge' }, // or 'msedge-dev'
-   // },
 
   ],
 });

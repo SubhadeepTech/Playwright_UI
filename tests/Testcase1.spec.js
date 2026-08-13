@@ -1,19 +1,10 @@
 const { test, expect, chromium } = require('@playwright/test');
+require('dotenv').config();
+
 
 test('First Test', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-  await page.getByRole('link', { name: 'Playwright logo Playwright' }).click();
-  await page.getByRole('link', { name: 'API' }).click();
-  await page.getByRole('link', { name: 'Docs' }).click();
-  await page.getByRole('link', { name: 'Playwright logo Playwright' }).click();
- 
-});
-
-test('Second Test', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-  await page.getByRole('link', { name: 'Playwright logo Playwright' }).click();
-  await page.getByRole('link', { name: 'API' }).click();
-  await page.getByRole('link', { name: 'Docs' }).click();
-  await page.getByRole('link', { name: 'Playwright logo Playwright' }).click();
+await page.goto(process.env.BASE_URL);
+console.log('USERNAME:', process.env.USERNAME);
+console.log('PASSWORD:', process.env.PASSWORD);
 
 });
